@@ -11,11 +11,9 @@ const SidebarList = () => {
         <CollectionList />
       </div>
       <div className="flex items-center justify-center h-40">
-        <div className="mt-auto">
-          <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-            <ModeToggle />
-          </ThemeProvider>
-        </div>
+        <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+          <ModeToggle />
+        </ThemeProvider>
       </div>
     </div>
   );
