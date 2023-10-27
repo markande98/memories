@@ -1,17 +1,9 @@
-import Navbar from "@/components/navbar";
-import Sidebar from "@/components/sidebar";
+import Layout from "@/components/layout";
 
-interface AppProps {
-  children: React.ReactNode;
-}
-const App = ({ children }: AppProps) => {
+const App = () => {
   return (
-    <div className="px-2 h-full flex">
-      <Sidebar />
-      <div className="w-full">
-        <Navbar />
-        <main>{children}</main>
-      </div>
+    <div className="h-full">
+      <Layout>Hello from App</Layout>
     </div>
   );
 };

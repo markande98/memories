@@ -1,7 +1,11 @@
-const Sidebar = () => {
+import Logo from "./logo";
+
+const SideBar = () => {
   return (
-    <div className="h-full p-2 w-60 border-r-2 border-gray-400">Sidebar</div>
+    <div className="h-full w-80 border-b absolute inset-0">
+      <Logo />
+    </div>
   );
 };
 
-export default Sidebar;
+export default SideBar;
