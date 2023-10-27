@@ -1,7 +1,17 @@
-const App = () => {
+import Navbar from "@/components/navbar";
+import Sidebar from "@/components/sidebar";
+
+interface AppProps {
+  children: React.ReactNode;
+}
+const App = ({ children }: AppProps) => {
   return (
-    <div className="text-2xl text-gray-500">
-      <h1 className="text-2xl text-blue-400">Hello from react</h1>
+    <div className="px-2 h-full flex">
+      <Sidebar />
+      <div className="w-full">
+        <Navbar />
+        <main>{children}</main>
+      </div>
     </div>
   );
 };
