@@ -30,7 +30,7 @@ const CollectionList = () => {
       <div className="space-y-4">
         {items.map((item) => (
           <CollectionListItem
-            key={item.href}
+            key={item.name}
             name={item.name}
             href={item.href}
             icon={item.icon}

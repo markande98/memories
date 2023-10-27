@@ -15,7 +15,7 @@ const CollectionListItem = ({
   return (
     <Link
       to={href || "/"}
-      className="flex items-center justify-center text-muted-foreground hover:text-black"
+      className="flex items-center justify-center text-muted-foreground hover:text-black dark:hover:text-white"
     >
       <Icon size={24} className="mr-2" />
       <p className="text-sm">{name}</p>

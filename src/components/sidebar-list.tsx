@@ -1,5 +1,7 @@
 import CollectionList from "./collection-list";
 import LibraryList from "./library-list";
+import { ModeToggle } from "./mode-toggle";
+import { ThemeProvider } from "./theme-provider";
 
 const SidebarList = () => {
   return (
@@ -9,7 +11,11 @@ const SidebarList = () => {
         <CollectionList />
       </div>
       <div className="flex items-center justify-center h-40">
-        <div className="mt-auto">Hello</div>
+        <div className="mt-auto">
+          <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+            <ModeToggle />
+          </ThemeProvider>
+        </div>
       </div>
     </div>
   );
