@@ -10,6 +10,7 @@ import {
 import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
 import Photos from "@/components/user-photo/photos";
 import ModalProvider from "./components/providers/modal-provider";
+import { ToasterProvider } from "./components/providers/toaster-provider";
 
 if (!process.env.REACT_APP_CLERK_PUBLISHABLE_KEY) {
   throw new Error("Missing Publishable Key");
@@ -37,6 +38,7 @@ function ClerkProviderWithRoutes() {
               <SignedIn>
                 <div className="h-full">
                   <Layout>
+                    <ToasterProvider />
                     <ModalProvider />
                     <Photos />
                   </Layout>
