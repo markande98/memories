@@ -1,10 +1,11 @@
 import { Album, Folder, ImagePlus } from "lucide-react";
 import LibraryListItem from "./library-list-item";
+import { useLocation } from "react-router-dom";
 
 const items = [
   {
     name: "Photos",
-    href: "/photos",
+    href: "/",
     icon: ImagePlus,
   },
   {
@@ -20,16 +21,18 @@ const items = [
 ];
 
 const LibraryList = () => {
+  const { pathname } = useLocation();
   return (
     <div className="mt-4 flex flex-col items-center justify-center">
       <h1 className="text-2xl font-semibold mb-6">Library</h1>
-      <div className="space-y-4">
+      <div className="space-y-6">
         {items.map((item) => (
           <LibraryListItem
             key={item.href}
             name={item.name}
             href={item.href}
             icon={item.icon}
+            isActive={pathname === item.href}
           />
         ))}
       </div>

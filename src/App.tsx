@@ -32,7 +32,7 @@ function ClerkProviderWithRoutes() {
           element={<SignUp routing="path" path="/sign-up" />}
         />
         <Route
-          path="/"
+          path="*"
           element={
             <>
               <SignedIn>
@@ -40,7 +40,11 @@ function ClerkProviderWithRoutes() {
                   <Layout>
                     <ToasterProvider />
                     <ModalProvider />
-                    <Photos />
+                    <Routes>
+                      <Route path="/" element={<Photos />} />
+                      <Route path="/albums" element={<div>Album</div>} />
+                      <Route path="/folders" element={<div>folder</div>} />
+                    </Routes>
                   </Layout>
                 </div>
               </SignedIn>

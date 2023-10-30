@@ -4,7 +4,7 @@ import Search from "./search";
 
 const Navbar = () => {
   return (
-    <div className="h-32 px-10 border-b dark:border-b-zinc-400 text-2xl flex items-center justify-between gap-x-4">
+    <div className="h-32 px-10 border-b-4 border-dashed dark:border-b-zinc-400 text-2xl flex items-center justify-between gap-x-4">
       <MobileSidebar />
       <div className="flex justify-between items-center w-full">
         <Search />
