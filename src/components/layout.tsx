@@ -9,7 +9,7 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="h-full flex relative dark:bg-zinc-800">
       <SideBar />
-      <div className="pl-80 w-full">
+      <div className="md:pl-80 w-full">
         <Navbar />
         <main>{children}</main>
       </div>

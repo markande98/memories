@@ -17,17 +17,19 @@ const PhotosListItem = ({ imageUrl, id }: PhotosListItemProps) => {
   }, [onDelete]);
 
   return (
-    <div className="h-full relative group w-48 rounded-3xl overflow-hidden border-4 hover:border-zinc-600">
+    <div
+      className={`h-full relative group w-48 rounded-3xl overflow-hidden border-4 hover:border-zinc-600 dark:hover:border-zinc-500`}
+    >
       <div className="cursor-pointer">
         <img
-          className="object-cover h-48 w-full group-hover:scale-110 transition"
+          className={`object-cover h-48 w-full group-hover:scale-110 transition`}
           src={imageUrl}
           alt="user"
         />
       </div>
       <div
         onClick={onClick}
-        className="absolute right-2 top-2 opacity-0 group-hover:opacity-100 group-hover:text-red-600 cursor-pointer"
+        className="absolute rounded-md right-2 top-2 opacity-0 group-hover:opacity-100 group-hover:text-red-600 cursor-pointer group-hover:bg-white"
       >
         {!isLoading && <IoMdTrash size={24} />}
         {isLoading && <ClipLoader size={24} />}

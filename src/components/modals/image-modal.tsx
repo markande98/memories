@@ -7,6 +7,7 @@ import { useUser } from "@clerk/clerk-react";
 import toast from "react-hot-toast";
 import { useImageModal } from "@/hooks/use-image-modal";
 import { Button } from "@/components/ui/button";
+import usePhotos from "@/hooks/use-photos";
 
 const options = {
   apiKey: "public_kW15bkT2C89qzwMmXdpkqiBpHXvs",
@@ -16,6 +17,7 @@ const options = {
 export const ImageModal = () => {
   const { onClose } = useImageModal();
   const { user } = useUser();
+  const { mutate: mutaeFetchedPhotos } = usePhotos(user?.id);
   const handleUpload = async (imageUrl: string) => {
     try {
       await axios.post("http://localhost:3000/photos", {
@@ -24,7 +26,7 @@ export const ImageModal = () => {
       });
       onClose();
       toast.success("Uploaded successfully");
-      window.location.reload();
+      mutaeFetchedPhotos();
     } catch (error) {
       toast.error("Something went wrong!");
       console.log(error);
