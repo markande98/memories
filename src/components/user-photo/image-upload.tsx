@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Plus } from "lucide-react";
-import { useImageModal } from "../hooks/use-image-modal";
+import { useImageModal } from "@/hooks/use-image-modal";
 
 const ImageUpload = () => {
   const { onOpen } = useImageModal();

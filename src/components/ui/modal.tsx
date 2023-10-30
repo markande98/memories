@@ -5,7 +5,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { useImageModal } from "@/components/hooks/use-image-modal";
+import { useImageModal } from "@/hooks/use-image-modal";
 
 interface ModalProps {
   title: string;

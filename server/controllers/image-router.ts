@@ -5,7 +5,15 @@ const router = express.Router();
 
 router.get("/", async (req: Request, res: Response) => {
   try {
-    const photos = await prismadb.photos.findMany();
+    const userId = req.query?.userId as string;
+    const photos = await prismadb.photos.findMany({
+      where: {
+        userId,
+      },
+      orderBy: {
+        createdAt: "desc",
+      },
+    });
 
     return res.status(200).json(photos);
   } catch (error) {
@@ -30,6 +38,24 @@ router.post("/", async (req: Request, res: Response) => {
   } catch (error) {
     console.log(error);
     return res.status(500).json({
+      error: error,
+    });
+  }
+});
+
+router.delete("/", async (req: Request, res: Response) => {
+  try {
+    const { id } = req.body;
+    const deletedPhoto = await prismadb.photos.delete({
+      where: {
+        id,
+      },
+    });
+
+    return res.status(201).json(deletedPhoto);
+  } catch (error) {
+    console.log(error);
+    return res.status(200).json({
       error: error,
     });
   }

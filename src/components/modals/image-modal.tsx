@@ -5,7 +5,8 @@ import { UploadButton } from "@bytescale/upload-widget-react";
 import { Modal } from "@/components/ui/modal";
 import { useUser } from "@clerk/clerk-react";
 import toast from "react-hot-toast";
-import { useImageModal } from "../hooks/use-image-modal";
+import { useImageModal } from "@/hooks/use-image-modal";
+import { Button } from "@/components/ui/button";
 
 const options = {
   apiKey: "public_kW15bkT2C89qzwMmXdpkqiBpHXvs",
@@ -23,6 +24,7 @@ export const ImageModal = () => {
       });
       onClose();
       toast.success("Uploaded successfully");
+      window.location.reload();
     } catch (error) {
       toast.error("Something went wrong!");
       console.log(error);
@@ -35,7 +37,7 @@ export const ImageModal = () => {
           options={options}
           onComplete={(files) => handleUpload(files[0].fileUrl)}
         >
-          {({ onClick }) => <button onClick={onClick}>Upload a file...</button>}
+          {({ onClick }) => <Button onClick={onClick}>Upload a file...</Button>}
         </UploadButton>
       </div>
     </Modal>
