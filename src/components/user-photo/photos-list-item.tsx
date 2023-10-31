@@ -18,11 +18,11 @@ const PhotosListItem = ({ imageUrl, id }: PhotosListItemProps) => {
 
   return (
     <div
-      className={`h-full relative group w-48 rounded-3xl overflow-hidden border-4 hover:border-zinc-600 dark:hover:border-zinc-500`}
+      className={`h-full relative group w-full rounded-3xl overflow-hidden border-4 hover:border-zinc-600 dark:hover:border-zinc-500`}
     >
       <div className="cursor-pointer">
         <img
-          className={`object-cover h-48 w-full group-hover:scale-110 transition`}
+          className={`object-cover h-32 w-full md:h-48 group-hover:scale-110 transition`}
           src={imageUrl}
           alt="user"
         />

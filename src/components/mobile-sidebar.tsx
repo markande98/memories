@@ -10,7 +10,10 @@ const MobileSidebar = () => {
         <SheetTrigger>
           <Menu />
         </SheetTrigger>
-        <SheetContent className="p-0 bg-white w-80" side="left">
+        <SheetContent
+          className="p-0 bg-white dark:bg-zinc-600 w-80"
+          side="left"
+        >
           <div className="h-full w-80 border-r dark:border-r-zinc-400 absolute inset-0">
             <Logo />
             <SidebarList />

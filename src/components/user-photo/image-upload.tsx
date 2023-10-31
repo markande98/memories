@@ -11,7 +11,7 @@ const ImageUpload = () => {
     <Button
       onClick={handleClick}
       variant="outline"
-      className="flex text-md items-center space-x-2"
+      className={`flex text-sm md:text-md items-center space-x-2`}
     >
       <p>Add Photo</p>
       <span>

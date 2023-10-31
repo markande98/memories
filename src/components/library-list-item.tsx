@@ -19,7 +19,7 @@ const LibraryListItem = ({
       to={href}
       className={`flex items-center rounded-sm justify-center text-muted-foreground hover:text-zinc-600 dark:hover:text-white ${
         isActive
-          ? "dark:text-zinc-600 p-2 bg-red-400 text-white dark:hover:text-zinc-800"
+          ? "dark:text-red-600 p-2 bg-red-400 dark:bg-white text-white dark:hover:text-red-800"
           : ""
       }`}
     >
