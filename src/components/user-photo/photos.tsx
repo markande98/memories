@@ -5,7 +5,7 @@ import PhotoHeader from "./photo-header";
 const Photos = () => {
   return (
     <ScrollArea>
-      <div className="p-12 h-[85vh]">
+      <div className="p-12">
         <PhotoHeader />
         <Gallery />
       </div>

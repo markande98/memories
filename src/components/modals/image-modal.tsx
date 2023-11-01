@@ -12,6 +12,7 @@ import usePhotos from "@/hooks/use-photos";
 const options = {
   apiKey: "public_kW15bkT2C89qzwMmXdpkqiBpHXvs",
   maxFileCount: 1,
+  mimeTypes: ["image/*"],
 };
 
 export const ImageModal = () => {
@@ -25,7 +26,7 @@ export const ImageModal = () => {
         userId: user?.id,
       });
       onClose();
-      toast.success("Uploaded successfully");
+      toast.success("Uploaded Successfully");
       mutaeFetchedPhotos();
     } catch (error) {
       toast.error("Something went wrong!");

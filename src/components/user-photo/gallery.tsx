@@ -7,8 +7,8 @@ const Gallery = () => {
   const { user } = useUser();
   const { data: photos = [], isLoading } = usePhotos(user?.id);
   return (
-    <div className="flex h-full items-center justify-center">
-      {isLoading && <ClipLoader size={72} />}
+    <div className="flex items-center justify-center mt-10">
+      {isLoading && <ClipLoader color="red" size={72} />}
       {!isLoading && <PhotosList items={photos} />}
     </div>
   );

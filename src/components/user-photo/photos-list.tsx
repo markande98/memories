@@ -7,7 +7,7 @@ interface PhotosListProps {
 
 const PhotosList = ({ items }: PhotosListProps) => {
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 md:gap-4 w-full">
+    <div className="flex items-center justify-evenly w-full flex-wrap gap-2">
       {items.map((item) => (
         <PhotosListItem key={item.id} imageUrl={item.imageUrl} id={item.id} />
       ))}
