@@ -10,6 +10,15 @@ export default defineConfig(({ mode }) => {
       "process.env.REACT_APP_CLERK_PUBLISHABLE_KEY": JSON.stringify(
         env.REACT_APP_CLERK_PUBLISHABLE_KEY
       ),
+      "process.env.REACT_CLOUDINARY_CLOUDNAME": JSON.stringify(
+        env.REACT_CLOUDINARY_CLOUDNAME
+      ),
+      "process.env.REACT_CLOUDINARY_API_KEY": JSON.stringify(
+        env.REACT_CLOUDINARY_API_KEY
+      ),
+      "process.env.REACT_CLOUDINARY_UPLOAD_PRESET": JSON.stringify(
+        env.REACT_CLOUDINARY_UPLOAD_PRESET
+      ),
     },
     plugins: [react()],
     resolve: {
