@@ -17,7 +17,7 @@ const LibraryListItem = ({
   return (
     <Link
       to={href}
-      className={`flex items-center rounded-sm justify-center text-muted-foreground hover:text-zinc-600 dark:hover:text-white ${
+      className={`flex items-center rounded-sm justify-center text-muted-foreground hover:text-zinc-600 ${
         isActive
           ? "dark:text-red-600 p-2 bg-red-400 dark:bg-white text-white dark:hover:text-red-800"
           : ""

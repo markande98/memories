@@ -1,17 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { Plus } from "lucide-react";
-import { useImageModal } from "@/hooks/use-image-modal";
+import { useModal } from "@/hooks/use-modal";
 
 const ImageUpload = () => {
-  const { onOpen } = useImageModal();
+  const { onOpen } = useModal();
   const handleClick = () => {
-    onOpen();
+    onOpen("imageUpload");
   };
   return (
     <Button
       onClick={handleClick}
       variant="outline"
-      className={`flex text-sm md:text-md items-center space-x-2`}
+      className="flex text-sm md:text-md items-center space-x-2"
     >
       <p>Add Photo</p>
       <span>

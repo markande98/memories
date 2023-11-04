@@ -11,6 +11,7 @@ import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
 import Photos from "@/components/user-photo/photos";
 import ModalProvider from "./components/providers/modal-provider";
 import { ToasterProvider } from "./components/providers/toaster-provider";
+import Videos from "./components/user-video/videos";
 
 if (!process.env.REACT_APP_CLERK_PUBLISHABLE_KEY) {
   throw new Error("Missing Publishable Key");
@@ -42,7 +43,7 @@ function ClerkProviderWithRoutes() {
                     <ModalProvider />
                     <Routes>
                       <Route path="/" element={<Photos />} />
-                      <Route path="/albums" element={<div>Album</div>} />
+                      <Route path="/videos" element={<Videos />} />
                       <Route path="/folders" element={<div>folder</div>} />
                     </Routes>
                   </Layout>

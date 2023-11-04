@@ -1,27 +1,23 @@
 import { format } from "date-fns";
-import ImageUpload from "./image-upload";
-import usePhotos from "@/hooks/use-photos";
-import { useUser } from "@clerk/clerk-react";
+import VideoUpload from "./video-upload";
 
-const PhotoHeader = () => {
-  const { user } = useUser();
-  const { data: photos = [] } = usePhotos(user?.id);
+const VideoHeader = () => {
   const currentDate = new Date();
   return (
     <div className="flex justify-between items-center gap-4">
       <div>
         <h1 className="text-xl md:text-3xl font-semibold text-muted-foreground">
-          Photos
+          Videos
         </h1>
         <p className="text-sm text-muted-foreground">
-          {format(currentDate, "MMMM dd, yyyy")} - {photos.length} images.
+          {format(currentDate, "MMMM dd, yyyy")} - 5 videos.
         </p>
       </div>
       <div className="flex items-center">
-        <ImageUpload />
+        <VideoUpload />
       </div>
     </div>
   );
 };
 
-export default PhotoHeader;
+export default VideoHeader;

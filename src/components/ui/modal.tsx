@@ -5,24 +5,30 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { useImageModal } from "@/hooks/use-image-modal";
+import { ModalType, useModal } from "@/hooks/use-modal";
 
 interface ModalProps {
   title: string;
   description: string;
   children: React.ReactNode;
+  typeModal: ModalType;
 }
 
-export const Modal = ({ title, description, children }: ModalProps) => {
-  const { isOpen, onClose } = useImageModal();
+export const Modal = ({
+  title,
+  description,
+  children,
+  typeModal,
+}: ModalProps) => {
+  const { isOpen, onClose, type } = useModal();
 
-  const onChange = (open: boolean) => {
-    if (!open) {
-      onClose();
-    }
+  const isModalOpen = isOpen && type === typeModal;
+
+  const handleClose = () => {
+    onClose();
   };
   return (
-    <Dialog open={isOpen} onOpenChange={onChange}>
+    <Dialog open={isModalOpen} onOpenChange={handleClose}>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle>{title}</DialogTitle>

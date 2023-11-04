@@ -17,12 +17,10 @@ const PhotosListItem = ({ imageUrl, id }: PhotosListItemProps) => {
   }, [onDelete]);
 
   return (
-    <div
-      className={`h-20 w-20 sm:h-28 sm:w-28 md:w-32 md:h-32 lg:h-44 lg:w-44 relative group rounded-3xl overflow-hidden border-4 hover:border-zinc-600 dark:hover:border-zinc-500 transition`}
-    >
+    <div className="h-48 md:h-36 lg:h-52 overflow-hidden relative group rounded-3xl border-4 hover:border-zinc-600 dark:hover:border-zinc-500 transition">
       <div>
         <img
-          className={`object-cover h-20 w-20 sm:h-28 sm:w-28 md:w-32 md:h-32 lg:h-44 lg:w-44 group-hover:scale-110 transition`}
+          className="group-hover:scale-110 transition object-cover h-48 md:h-36 lg:h-52 w-full"
           src={imageUrl}
           alt="user"
         />
