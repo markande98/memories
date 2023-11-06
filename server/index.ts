@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import dotenv from "dotenv";
 import imageRouter from "./controllers/image-router";
+import videoRouter from "./controllers/video-router";
 
 dotenv.config();
 
@@ -14,6 +15,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use("/photos", imageRouter);
+app.use("/videos", videoRouter);
 
 app.get("/", (req: Request, res: Response) => {
   res.status(200).json({
