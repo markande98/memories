@@ -1,4 +1,5 @@
 import useDelete from "@/hooks/use-delete";
+import { useModal } from "@/hooks/use-modal";
 import { useUser } from "@clerk/clerk-react";
 import { Video } from "lucide-react";
 import { useCallback } from "react";
@@ -11,6 +12,7 @@ interface VideoListItemProps {
 }
 
 const VideoListItem = ({ id, videoUrl }: VideoListItemProps) => {
+  const { onOpen } = useModal();
   const { user } = useUser();
   const { onDelete, isLoading } = useDelete(id, user?.id as string, true);
   const onClick = useCallback(() => {
@@ -18,7 +20,10 @@ const VideoListItem = ({ id, videoUrl }: VideoListItemProps) => {
   }, [onDelete]);
   return (
     <div className="h-48 md:h-36 lg:h-52 overflow-hidden relative group rounded-3xl border-4 hover:border-zinc-600 dark:hover:border-zinc-500 transition">
-      <div className="relative">
+      <div
+        className="relative cursor-pointer"
+        onClick={() => onOpen("videoPreview", { videoUrl, id })}
+      >
         <video
           className="group-hover:scale-110 transition object-cover h-48 md:h-36 lg:h-52 w-full"
           src={videoUrl}

@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import useVideos from "./use-videos";
 
-const useDelete = (id: string, userId: string, isVideo?: boolean) => {
+const useDelete = (id?: string, userId?: string, isVideo?: boolean) => {
   const { mutate: mutateFetchedPhotos } = usePhotos(userId);
   const { mutate: mutateFetchedVideos } = useVideos(userId);
   const [isLoading, setIsLoading] = useState(false);
