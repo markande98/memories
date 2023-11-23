@@ -1,4 +1,4 @@
-import { Folder, ImagePlus, Video } from "lucide-react";
+import { Heart, ImagePlus, Video } from "lucide-react";
 import LibraryListItem from "./library-list-item";
 import { useLocation } from "react-router-dom";
 
@@ -14,9 +14,9 @@ const items = [
     icon: Video,
   },
   {
-    name: "Folders",
-    href: "/folders",
-    icon: Folder,
+    name: "Favorites",
+    href: "/favorites",
+    icon: Heart,
   },
 ];
 
