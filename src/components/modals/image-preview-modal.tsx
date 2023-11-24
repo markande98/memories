@@ -1,15 +1,15 @@
 import { Modal } from "@/components/ui/modal";
 import { useModal } from "@/hooks/use-modal";
 import { Button } from "../ui/button";
-import useDelete from "@/hooks/use-delete";
 import { useUser } from "@clerk/clerk-react";
 import { useCallback } from "react";
+import { useChange } from "@/hooks/use-change";
 
 const ImagePreviewModal = () => {
   const { user } = useUser();
   const { data, onClose } = useModal();
   const { imageUrl, id } = data;
-  const { onDelete } = useDelete(id, user?.id);
+  const { onDelete } = useChange(id, user?.id);
 
   const handleDelete = useCallback(async () => {
     await onDelete();

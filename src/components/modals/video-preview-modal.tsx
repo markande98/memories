@@ -3,14 +3,14 @@ import { useModal } from "@/hooks/use-modal";
 import ReactPlayer from "react-player";
 import { Button } from "../ui/button";
 import { useCallback } from "react";
-import useDelete from "@/hooks/use-delete";
 import { useUser } from "@clerk/clerk-react";
+import { useChange } from "@/hooks/use-change";
 
 const VideoPreviewModal = () => {
   const { user } = useUser();
   const { data, onClose } = useModal();
   const { id, videoUrl } = data;
-  const { onDelete } = useDelete(id, user?.id, true);
+  const { onDelete } = useChange(id, user?.id, true);
 
   const handleDelete = useCallback(async () => {
     await onDelete();
@@ -23,7 +23,7 @@ const VideoPreviewModal = () => {
       description="Video Preview"
       typeModal="videoPreview"
     >
-      <div className="flex items-center">
+      <div className="flex items-center h-64">
         <ReactPlayer
           url={videoUrl}
           playing

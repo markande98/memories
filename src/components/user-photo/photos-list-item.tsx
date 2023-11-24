@@ -1,22 +1,25 @@
-import useDelete from "@/hooks/use-delete";
+import { useChange } from "@/hooks/use-change";
 import { useModal } from "@/hooks/use-modal";
 import { useUser } from "@clerk/clerk-react";
 import { useCallback } from "react";
-import { IoMdTrash } from "react-icons/io";
-import { ClipLoader } from "react-spinners";
+import toast from "react-hot-toast";
+import { IoMdHeart, IoMdHeartEmpty } from "react-icons/io";
 
 interface PhotosListItemProps {
   id: string;
   imageUrl: string;
+  isLiked: boolean;
 }
 
-const PhotosListItem = ({ imageUrl, id }: PhotosListItemProps) => {
+const PhotosListItem = ({ imageUrl, id, isLiked }: PhotosListItemProps) => {
   const { user } = useUser();
   const { onOpen } = useModal();
-  const { onDelete, isLoading } = useDelete(id, user?.id as string);
-  const onClick = useCallback(() => {
-    onDelete();
-  }, [onDelete]);
+  const { onToggle } = useChange(id, user?.id as string);
+  const onClick = useCallback(async () => {
+    await onToggle(isLiked);
+    if (!isLiked) toast.success("added to favorites");
+    else toast.success("remove from favorites");
+  }, [onToggle, isLiked]);
 
   return (
     <div className="h-48 md:h-36 lg:h-52 overflow-hidden relative group rounded-3xl border-4 hover:border-zinc-600 dark:hover:border-zinc-500 transition">
@@ -29,10 +32,10 @@ const PhotosListItem = ({ imageUrl, id }: PhotosListItemProps) => {
       </div>
       <div
         onClick={onClick}
-        className="absolute rounded-full p-2 right-1 top-1 opacity-0 group-hover:opacity-100 group-hover:text-red-600 cursor-pointer bg-red-600"
+        className="absolute rounded-full p-2 right-1 top-1 opacity-0 group-hover:opacity-100 group-hover:text-red-600 cursor-pointer bg-white"
       >
-        {!isLoading && <IoMdTrash color="white" size={24} />}
-        {isLoading && <ClipLoader size={24} className="p-0" />}
+        {!isLiked && <IoMdHeartEmpty size={24} />}
+        {isLiked && <IoMdHeart size={24} />}
       </div>
     </div>
   );

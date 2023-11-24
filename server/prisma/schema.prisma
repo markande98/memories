@@ -14,6 +14,7 @@ model Photos{
   id String @id @default(uuid())
   userId String
   imageUrl String @db.Text
+  isLiked Boolean @default(false)
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -23,6 +24,7 @@ model Videos{
   id String @id @default(uuid())
   userId String
   videoUrl String @db.Text
+  isLiked Boolean @default(false)
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
