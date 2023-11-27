@@ -12,6 +12,7 @@ import Photos from "@/components/user-photo/photos";
 import ModalProvider from "./components/providers/modal-provider";
 import { ToasterProvider } from "./components/providers/toaster-provider";
 import Videos from "./components/user-video/videos";
+import Favorites from "./components/user-favorites/favorites";
 
 if (!process.env.REACT_APP_CLERK_PUBLISHABLE_KEY) {
   throw new Error("Missing Publishable Key");
@@ -44,7 +45,7 @@ function ClerkProviderWithRoutes() {
                     <Routes>
                       <Route path="/" element={<Photos />} />
                       <Route path="/videos" element={<Videos />} />
-                      <Route path="/folders" element={<div>folder</div>} />
+                      <Route path="/favorites" element={<Favorites />} />
                     </Routes>
                   </Layout>
                 </div>
