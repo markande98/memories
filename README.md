@@ -29,7 +29,7 @@
 ### Cloning the repository
 
 ```shell
-
+git clone https://github.com/markande98/memories.git
 ```
 
 ### Install packages
