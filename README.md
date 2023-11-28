@@ -8,6 +8,7 @@
 
 ### Functionality & Tech Stack:
 
+- clerk authentication.
 - uploading videos.
 - uploading Photos.
 - preview photos & videos.
