@@ -1,27 +1,61 @@
-# React + TypeScript + Vite
+# Memories: A React + Typescript application for uploading videos and photos (2023).
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+| Home Page (Light Mode)                                      | Home Page (Dark Mode)                                                               |
+| ----------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| ![Home Page](snapshots/home-page.png?raw=true "Login page") | ![Home page (Dark Mode)](snapshots/dark-home-page.png?raw=true "Registration page") |
 
-Currently, two official plugins are available:
+## This is a repository for storing & uploading media files using Reactjs, Prisma, Tailwind, MySQL, Shadcn, Zustand
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Functionality & Tech Stack:
 
-## Expanding the ESLint configuration
+- uploading videos.
+- uploading Photos.
+- preview photos & videos.
+- CRUD operations
+- add/remove (favorites files)
+- ReactJS + Typesrcipt
+- Primsa
+- Tailwind
+- Express
+- Shadcn
+- MySQL
+- Custom Hooks
+- Zustand (global state management)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Prerequisites
 
-- Configure the top-level `parserOptions` property like this:
+**Node version 20.x**
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+### Cloning the repository
+
+```shell
+
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Install packages
+
+```shell
+npm i
+```
+
+### Setup frontend .env file
+
+```js
+REACT_APP_CLERK_PUBLISHABLE_KEY=
+REACT_CLOUDINARY_CLOUDNAME=
+REACT_CLOUDINARY_API_KEY=
+REACT_CLOUDINARY_UPLOAD_PRESET=
+```
+
+### Setup backend .env file
+
+```js
+PORT=
+DATABASE_URL=
+```
+
+### Start the app
+
+```shell
+npm run dev (both client/server)
+```
